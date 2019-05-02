@@ -50,17 +50,5 @@ module Dhcp
         notifies :restart, "service[#{node['dhcp']['service_name']}]", :delayed
       end
     end
-
-    #
-    # Escape some special characters
-    #
-    # escape  . -> - and / -> _
-    # so 1.1/3 -> 1-1_3
-    #
-    def escape(new_resource.name)
-      name.tr('.', '-').tr('/', '_')
-    end
-
-    module_function :escape
   end
 end
