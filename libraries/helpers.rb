@@ -57,7 +57,7 @@ module Dhcp
     # escape  . -> - and / -> _
     # so 1.1/3 -> 1-1_3
     #
-    def escape(name)
+    def escape(new_resource.name)
       name.tr('.', '-').tr('/', '_')
     end
 
